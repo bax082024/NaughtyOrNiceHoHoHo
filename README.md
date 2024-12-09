@@ -12,6 +12,11 @@
 
 ---
 
+### Masterplan:
+
+[Masterplan](/Masterplan/Prosjektuke-skisse.PNG)
+
+---
 ### Contact :
 
 ### Discord

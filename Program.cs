@@ -10,3 +10,6 @@ var elves = new List<Elf>
   new Elf { Name = Alvbjørn, Craft = Artist, Item = Portret},
   new Elf { Name = Alv-Prøysen, Musician = Ceramic, Item = Banjo}
 };
+
+
+

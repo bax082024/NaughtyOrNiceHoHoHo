@@ -1,5 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+Console.WriteLine("Hey Santa baby");
+
 
 // Create elf list
 var elves = new List<Elf>

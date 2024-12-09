@@ -1,0 +1,4 @@
+09.12.2024
+Idag har vi fordelt oppgaver, fått laget en "masterplan" i excalidraw.
+Har satt opp github prosjektet og laget branches, og har gjort endel merge og pull requests.
+Synes samarbeidet har gått veldig bra så langt.

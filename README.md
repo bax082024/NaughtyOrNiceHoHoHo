@@ -8,7 +8,7 @@
 
 ### How to use
 
-- Clone the repository : **https://github.com/bax082024/NaughtyOrNiceHoHoHo.git**
+- Clone the repositorye : **https://github.com/bax082024/NaughtyOrNiceHoHoHo.git**
 
 ---
 

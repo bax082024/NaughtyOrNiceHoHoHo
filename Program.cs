@@ -1,7 +1,47 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text.Json;
 
-Console.WriteLine("Hey Santa baby");
+var jsonFilePath = "randomPeople.json";
+List<UserInfo>people;
 
+if (File.Exists(jsonFilePath))
+{
+  string jsonContent = File.ReadAllText(jsonFilePath);
+  people = JsonSerializer.Deserialize<List<UserInfo>>(jsonContent, new JsonSerializerOptions
+  {
+    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+  });
+  Console.WriteLine("Data succesfully loaded from randomPeople.json!");
+}
+else
+{
+  Console.WriteLine($"Error: File {jsonFilePath} not found.");
+  people = new List<UserInfo>();
+}
+
+var niceList = new List<UserInfo>();
+var naughtyList = new List<UserInfo>();
+
+foreach (var person in people)
+{
+  int niceScore = 0;
+  int naughtyScore = 0;
+
+  if(person.DonatesToCharity) niceScore++;
+  if(person.WashesHands) niceScore++;
+  if(person.ToiletPaperOutward) naughtyScore++;
+
+  if (niceScore > naughtyScore)
+  {
+    niceList.Add(person);
+  }
+  else
+  {
+    naughtyList.Add(person);
+  }
+}
 
 // Create elf list
 var elves = new List<Elf>

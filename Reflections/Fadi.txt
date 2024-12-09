@@ -1,0 +1,7 @@
+Mandag 9 Desember: Kjære txt-fil. Denne dagen Blir regnet som vår første dag i prosjektuken, vi startet med å tegne en skisse for å visualisere 
+hvordan prosjektet vil se ut med hjelp av Excalidraw. Visualiseringen gjorde det enklere for oss alle å få bedre oversikt over hvilket metoder som blir nødt til å 
+implementeres, i mitt tilfelle så fikk jeg ansvar over å sortere menneskene i randomPeople.json i to lister " naugthy / nice". 
+Jeg har gjort et forsøk på å laste opp menneskene som skal sorteres ved å plassere randomPeople.json filen i min branch-prosjekt, deserialisere/oversette filen til prosjektet og innført 
+en sorteringslogikk som skal sortere alle menneskene fra json-filen i nice/naughty lister. Ettersom vsc-programmet mitt ikke klarer å idenitifesere prosjektet, som gjør at jeg
+ikke kan bruke dotnet run, så er jeg usikker på om min sorteringslogikk faktisk fungerer. Jeg vil feilsøke dette problemet med gruppen min i morgen, ettersom jeg
+ikke ønsker å skape unødvendig github-error.

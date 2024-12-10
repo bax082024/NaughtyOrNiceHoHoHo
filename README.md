@@ -1,6 +1,6 @@
 # Naughty or Nice :santa:  :christmas_tree:
 
-## Introduction
+## Introduction  :snowman:
 
 - School group project we made to make a naughty or nice seperator, and 10% of the bad ones gets eaten by Gryla. We have 5 elves.
 

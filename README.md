@@ -1,4 +1,4 @@
-# Naughty or Nice
+# Naughty or Nice :santa:
 
 ## Introduction
 

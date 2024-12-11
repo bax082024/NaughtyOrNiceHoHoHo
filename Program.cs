@@ -55,5 +55,24 @@ var elves = new List<Elf>
 
 // Må tildele alver til personer på snillelista, og sørge for at Gryla har 10% sjanse til å naske noen fra slemmelista ...
 
+var random = new Random();
+for (int i = 0; i < niceList.Count; i++)
+{
+  var elf = elves[i % elves.Count];
+  Console.WriteLine($"{elf.Name} is assigned to {niceList[i].Name} and gives a {elf.Item}.");
+}
+
+if (naughtyList.Count > 0)
+{
+  foreach (var naughtyChild in naughtyList)
+  {
+    if (random.next(1, 101) <= 10)
+    {
+      Console.WriteLine($"God damn! Gryla has eaten {naughtyChild.Name}!");
+      naughtyList.Remove(naughtyChild);
+      break;
+    }
+  }
+}
 
 

@@ -46,11 +46,11 @@ foreach (var person in people)
 // Create elf list
 var elves = new List<Elf>
 {
-  new Elf { Name = Alvhild, Craft = Ceramic, Item = Ashtray},
-  new Elf { Name = Leahlv, Craft = Glassblowing, Item = Glassballs},
-  new Elf { Name = Kai-Alv, Craft = Woodwork, Item = Mini-sled},
-  new Elf { Name = Alvbjørn, Craft = Artist, Item = Portret},
-  new Elf { Name = Alv-Prøysen, Musician = Ceramic, Item = Banjo}
+  new Elf { Name = Alvhild, Craft = Ceramic, Item = Ashtray },
+  new Elf { Name = Leahlv, Craft = Glassblowing, Item = Glassballs },
+  new Elf { Name = Kai-Alv, Craft = Woodwork, Item = Mini-sled },
+  new Elf { Name = Alvbjørn, Craft = Artist, Item = Portret },
+  new Elf { Name = Alv-Prøysen, Craft = Musician = Ceramic, Item = Banjo }
 };
 
 // Må tildele alver til personer på snillelista, og sørge for at Gryla har 10% sjanse til å naske noen fra slemmelista ...

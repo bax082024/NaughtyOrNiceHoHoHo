@@ -12,9 +12,14 @@
 
 ---
 
+### Masterplan:
+
+[Masterplan](/Masterplan/Prosjektuke-skisse.PNG)
+
+---
 ### Contact :
 
-### Discord
+### Discord ID
 
 - **Bax**: **1274996112578707456**
 - **Mariann**: **1274996940093788201**

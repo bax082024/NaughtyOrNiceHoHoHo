@@ -4,12 +4,12 @@ using System.IO;
 using System.Text.Json;
 
 var jsonFilePath = "randomPeople.json";
-List<UserInfo>people;
+List<Person>people;
 
 if (File.Exists(jsonFilePath))
 {
   string jsonContent = File.ReadAllText(jsonFilePath);
-  people = JsonSerializer.Deserialize<List<UserInfo>>(jsonContent, new JsonSerializerOptions
+  people = JsonSerializer.Deserialize<List<Person>>(jsonContent, new JsonSerializerOptions
   {
     PropertyNamingPolicy = JsonNamingPolicy.CamelCase
   });
@@ -18,11 +18,11 @@ if (File.Exists(jsonFilePath))
 else
 {
   Console.WriteLine($"Error: File {jsonFilePath} not found.");
-  people = new List<UserInfo>();
+  people = new List<Person>();
 }
 
-var niceList = new List<UserInfo>();
-var naughtyList = new List<UserInfo>();
+var niceList = new List<Person>();
+var naughtyList = new List<Person>();
 
 foreach (var person in people)
 {
@@ -52,6 +52,8 @@ var elves = new List<Elf>
   new Elf { Name = Alvbjørn, Craft = Artist, Item = Portret},
   new Elf { Name = Alv-Prøysen, Musician = Ceramic, Item = Banjo}
 };
+
+// Må tildele alver til personer på snillelista, og sørge for at Gryla har 10% sjanse til å naske noen fra slemmelista ...
 
 
 

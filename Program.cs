@@ -5,7 +5,7 @@ using System.Text.Json;
 using Models;
 
 var jsonFilePath = "randomPeople.json";
-List<Person>people;
+List<Person> people = new List<Person>();
 
 if (File.Exists(jsonFilePath))
 {
@@ -19,20 +19,25 @@ if (File.Exists(jsonFilePath))
 else
 {
   Console.WriteLine($"Error: File {jsonFilePath} not found.");
-  people = new List<Person>();
+  
 }
+
 
 var niceList = new List<Person>();
 var naughtyList = new List<Person>();
+
 
 foreach (var person in people)
 {
   int niceScore = 0;
   int naughtyScore = 0;
 
-  if(person.DonatesToCharity) niceScore++;
-  if(person.WashesHands) niceScore++;
-  if(person.ToiletPaperOutward) naughtyScore++;
+  if(person.DonatesToCharity) naughtyScore++;
+  if(person.WashedHands) niceScore++;
+  if(person.ToiletPaperOutward) niceScore++;
+
+  if(person.HomeAdress) niceScore++;
+
 
   if (niceScore > naughtyScore)
   {
@@ -42,6 +47,8 @@ foreach (var person in people)
   {
     naughtyList.Add(person);
   }
+
+
 }
 
 // Create elf list

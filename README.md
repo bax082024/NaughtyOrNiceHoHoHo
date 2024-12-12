@@ -32,7 +32,7 @@ We made this as a school assignment, to practice working together as a team.
 
 ### Contact :
 
-### Discord ID
+![Discord](/Images/Discord.svg)
 
 - **Bax**: **1274996112578707456**
 - **Mariann**: **1274996940093788201**

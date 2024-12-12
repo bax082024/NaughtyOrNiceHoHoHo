@@ -1,28 +1,38 @@
 
-# Naughty or Nice :santa:  :christmas_tree: :gift:
+# :santa: Naughty or Nice :santa:  
 
-## Introduction  :snowman:
+## :snowman:  Introduction  :snowman:
 
 - :innocent:  Are you naughty or nice  :smiling_imp:
 - Lets check santas list to see who is naughty or nice! 
-- If your on the naughty list, here is a change Gryla comes and eats you  :skull:
+- If your on the naughty list, there is a chance Gryla comes and eats you  :skull:
 
 ---
 
-### How to use
+### :christmas_tree: How to use :christmas_tree:
 
 - Clone the repository : **https://github.com/bax082024/NaughtyOrNiceHoHoHo.git**
+- cd NaughtyOrNiceHoHoHo
+- dotnet run
+
 
 ---
 
-### Masterplan:
+### :gift:  Masterplan:  :gift:
 
-[Masterplan](/Masterplan/Prosjektuke-skisse.PNG)
+[Masterplan](/Masterplan/Prosjektuke-skisse.PNG)  
 
 ---
-### Contact :
 
-### Discord ID
+### :shrug: About us : :shrug:
+- **Fadi, Mariann and Bax** Are backend programming students.
+We made this as a school assignment, to practice working together as a team.
+
+---
+
+### :telephone: Contact : :telephone:
+
+![Discord](/Images/Discord.svg)
 
 - **Bax**: **1274996112578707456**
 - **Mariann**: **1274996940093788201**

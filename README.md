@@ -24,13 +24,13 @@
 
 ---
 
-### About us : 
+### :shrug: About us : :shrug:
 - **Fadi, Mariann and Bax** Are backend programming students.
 We made this as a school assignment, to practice working together as a team.
 
 ---
 
-### Contact :
+### :telephone: Contact : :telephone:
 
 ![Discord](/Images/Discord.svg)
 

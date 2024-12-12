@@ -18,7 +18,7 @@
 
 ---
 
-### Masterplan:  :gift:
+### :gift:  Masterplan:  :gift:
 
 [Masterplan](/Masterplan/Prosjektuke-skisse.PNG)  
 

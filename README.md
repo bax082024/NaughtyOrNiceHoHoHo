@@ -4,6 +4,8 @@
 ## Introduction  :snowman:
 
 - :innocent:  Are you naughty or nice  :smiling_imp:
+- Lets check santas list to see who is naughty or nice! 
+- If your on the naughty list, here is a change Gryla comes and eats you  :skull:
 
 ---
 

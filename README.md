@@ -1,5 +1,5 @@
 
-# Naughty or Nice :santa:  :christmas_tree: :gift:
+# :christmas_tree:  Naughty or Nice :santa:  :christmas_tree: 
 
 ## Introduction  :snowman:
 
@@ -18,9 +18,9 @@
 
 ---
 
-### Masterplan:
+### Masterplan:  :gift:
 
-[Masterplan](/Masterplan/Prosjektuke-skisse.PNG)
+[Masterplan](/Masterplan/Prosjektuke-skisse.PNG)  
 
 ---
 

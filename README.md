@@ -1,7 +1,7 @@
 
-# :christmas_tree:  Naughty or Nice :santa:  :christmas_tree: 
+# :santa: Naughty or Nice :santa:  
 
-## Introduction  :snowman:
+## :snowman:  Introduction  :snowman:
 
 - :innocent:  Are you naughty or nice  :smiling_imp:
 - Lets check santas list to see who is naughty or nice! 
@@ -9,7 +9,7 @@
 
 ---
 
-### How to use
+### :christmas_tree: How to use :christmas_tree:
 
 - Clone the repository : **https://github.com/bax082024/NaughtyOrNiceHoHoHo.git**
 - cd NaughtyOrNiceHoHoHo

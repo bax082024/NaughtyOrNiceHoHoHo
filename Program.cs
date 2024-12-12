@@ -46,7 +46,7 @@ static void SortPeople(List<Person> people, List<Person> niceList, List<Person> 
   {
     int score = CalculateScore(person);
     // Legg til personen i snillelista om poengsum er høyere enn 0, hvis 0 eller lavere så blir det slemmelista
-    if (score > 0)
+    if (score >= 0)
     {
       niceList.Add(person);
     }
@@ -108,6 +108,7 @@ var elves = new List<Elf>
 };
 
 // Må tildele alver til personer på snillelista, og sørge for at Gryla har 10% sjanse til å naske noen fra slemmelista ...
+      Console.WriteLine($"\nList over nice kids with their assigned elves: ");
 for (int i = 0; i < niceList.Count; i++)
 {
   var elf = elves[i % elves.Count];
@@ -118,8 +119,10 @@ for (int i = 0; i < niceList.Count; i++)
 static void HandleGryla(List<Person> naughtyList) // Brukte Gryla-funksjonen tidligere via denne funksjonen
 {
   var random = new Random();
+      Console.WriteLine($"\nList over naughty kids: ");
   foreach (var naughtyChild in naughtyList)
   {
+      Console.WriteLine($"{naughtyChild.Name}");
     if (random.Next(1, 101) <= 10) //10% sjanse for at Gryla the grudge spiser te barn fra slemmelista
     {
       Console.WriteLine($"God damn! Gryla has eaten {naughtyChild.Name}!");

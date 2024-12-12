@@ -1,7 +1,17 @@
-Mandag 9 Desember: Kjære txt-fil. Denne dagen Blir regnet som vår første dag i prosjektuken, vi startet med å tegne en skisse for å visualisere 
+🎃Mandag 9 Desember: Kjære txt-fil. Denne dagen Blir regnet som vår første dag i prosjektuken, vi startet med å tegne en skisse for å visualisere 
 hvordan prosjektet vil se ut med hjelp av Excalidraw. Visualiseringen gjorde det enklere for oss alle å få bedre oversikt over hvilket metoder som blir nødt til å 
 implementeres, i mitt tilfelle så fikk jeg ansvar over å sortere menneskene i randomPeople.json i to lister " naugthy / nice". 
 Jeg har gjort et forsøk på å laste opp menneskene som skal sorteres ved å plassere randomPeople.json filen i min branch-prosjekt, deserialisere/oversette filen til prosjektet og innført 
 en sorteringslogikk som skal sortere alle menneskene fra json-filen i nice/naughty lister. Ettersom vsc-programmet mitt ikke klarer å idenitifesere prosjektet, som gjør at jeg
 ikke kan bruke dotnet run, så er jeg usikker på om min sorteringslogikk faktisk fungerer. Jeg vil feilsøke dette problemet med gruppen min i morgen, ettersom jeg
-ikke ønsker å skape unødvendig github-error.
+ikke ønsker å skape unødvendig github-error.🎃
+
+🤧Tirsdag 10 Desember: Hjemmekontor grunnet sykdom, men tilbringte dagen med å fikse tidligere problemstillinger i forhold til VSC.🤧
+
+🎃Onsdag 11 Desember: I dag har vi hatt et par gruppemøter hvor jeg har blitt bedt om å gjøre et par endringer i koden.
+Jeg har først og fremst:
+1, Oppdatert poengsystemet, gjort den mer basert på bool-verdier for bedre poenggiving.
+2. Sortert folk inn i "snill" og "slem" liste basert på poengsummer med hjelp av metoden SortPeople.
+3. Tildelt alver til personer, hvor hver alv deler ut 1 gave til en hver person med hjelp av metoden AssignElves.
+4. Behandlet Gryla slik at det alltid er 10% sjanse for at hun spiser et barn.🎃
+

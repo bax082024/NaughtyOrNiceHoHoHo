@@ -4,157 +4,116 @@ using System.IO;
 using System.Text.Json;
 using Models;
 
-var jsonFilePath = "randomPeople.json";
-List<Person> people = new List<Person>();
-
 class Program
 {
-  static void Main()
-  { 
-    var jsonFilePath = "randomPeople.json";
-    List<Person>people;
-    
-    if (File.Exists(jsonFilePath))
+    static void Main()
     {
-      string jsonContent = File.ReadAllText(jsonFilePath);
-      people = JsonSerializer.Deserialize<List<Person>>(jsonContent, new JsonSerializerOptions
-      {
-        PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-        }) ?? new List<Person>();
+        var jsonFilePath = "randomPeople.json";
+        List<Person> people;
 
-      Console.WriteLine("Data succesfully loaded from randomPeople.json!");
-      }
-      else
-      {
-        Console.WriteLine($"Error: File {jsonFilePath} not found.");
-        people = new List<Person>();
-        }
+        // Laste inn json fil med personer
+        people = LoadPeopleFromJson(jsonFilePath);
 
+        // initialisere lister
         var niceList = new List<Person>();
         var naughtyList = new List<Person>();
 
-        //Implementert SortPeople for sortering av folk basert på poengsummen
+        // Sortere folk
         SortPeople(people, niceList, naughtyList);
 
-        
-        AssignElves(niceList); // kaller fra AssignElves for å tildele alver basert på snille-listen
+        // tildele alver til nice list
+        var elves = InitializeElves();
+        AssignElves(niceList, elves);
 
-        HandleGryla(naughtyList); // Sørger for at Gryla spiser et barn "10% sjanse"
-}
-
-static void SortPeople(List<Person> people, List<Person> niceList, List<Person> naughtyList)
-{
-
-  Console.WriteLine($"Error: File {jsonFilePath} not found.");
-  
-}
-
-
-var niceList = new List<Person>();
-var naughtyList = new List<Person>();
-
-
-foreach (var person in people)
-{
-  int niceScore = 0;
-  int naughtyScore = 0;
-
-  if(person.DonatesToCharity) naughtyScore++;
-  if(person.WashedHands) niceScore++;
-  if(person.ToiletPaperOutward) niceScore++;
-
-  if(person.HomeAdress) niceScore++;
-
-
-
-  else
-  {
-    score -= 1;
-  }
-  
-  if (person.WashedHands)
-  {
-    score += 1;
-  }
-  
-  else
-  {
-    score -= 1;
-  }
-
-
-  if (person.ToiletPaperOutward)
-  {
-    score += 1;
-}
-
-else
-{
-  score -= 1;
-}
-
-return score;
-}
-
-static void AssignElves(List<Person> niceList) // Kalte på denne funksjonen tidligere, funksjonen er selvforklarende..
-{
-
-  new Elf { Name = "Alvhild", Craft = "Ceramic", Item = "Ashtray" },
-  new Elf { Name = "Leahlv", Craft = "Glassblowing", Item = "Glassball" },
-  new Elf { Name = "Kai-Alv", Craft = "Woodwork", Item = "Mini-sled" },
-  new Elf { Name = "Alvbjørn", Craft = "Artist", Item = "Portret" },
-  new Elf { Name = "Alv-Prøysen", Craft = "Musician", Item = "Banjo" }
-};
-
-static void AssignElves(List<Person> niceList, List<Elf> elves)
-{
-  int elfIndex = 0;
-  foreach (var person in niceList)
-  {
-    var elf = elves[elfIndex];
-    Console.WriteLine
-    ($"Yey! {elf.Name} is assigned to {person.Name}! {elf.Name} will gift them a {elf.Item}!");
-    elfIndex = (elfIndex + 1) % elves.Count;
-  }
-}
-
-static void HandleNaughtyList(List<Person> naughtyList)
-{
-  Random rand = new Random();
-  foreach(var person in naughtyList)
-  {
-    if(rand.Next(1, 101) <= 10) //10% chance Gryla eats you
-    {
-      Console.WriteLine($"Oh, this is unfortunate. {person.Name} is taken by Gryla and eaten.");
+        // gryla funskjon naughtylist
+        HandleGryla(naughtyList);
     }
-    else
+
+
+    // Laste inn folk fra json
+    static List<Person> LoadPeopleFromJson(string jsonFilePath)
     {
-      Console.WriteLine
-      ($"Looks like someone has been naughty this year. {person.Name} is getting a coal");
+        if (File.Exists(jsonFilePath))
+        {
+            string jsonContent = File.ReadAllText(jsonFilePath);
+            var people = JsonSerializer.Deserialize<List<Person>>(jsonContent, new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            }) ?? new List<Person>();
+            Console.WriteLine("Data successfully loaded from randomPeople.json!");
+            return people;
+        }
+        else
+        {
+            Console.WriteLine($"Error: File {jsonFilePath} not found.");
+            return new List<Person>();
+        }
     }
-  }
-}
 
-// Må tildele alver til personer på snillelista, og sørge for at Gryla har 10% sjanse til å naske noen fra slemmelista ...
-for (int i = 0; i < niceList.Count; i++)
-{
-  var elf = elves[i % elves.Count];
-  Console.WriteLine($"{elf.Name} is assigned to {niceList[i].Name} and gives a {elf.Item}.");
-}
-}
-
-static void HandleGryla(List<Person> naughtyList) // Brukte Gryla-funksjonen tidligere via denne funksjonen
-{
-  var random = new Random();
-  foreach (var naughtyChild in naughtyList)
-  {
-    if (random.Next(1, 101) <= 10) //10% sjanse for at Gryla the grudge spiser te barn fra slemmelista
+    // Sortere Folk
+    static void SortPeople(List<Person> people, List<Person> niceList, List<Person> naughtyList)
     {
-      Console.WriteLine($"God damn! Gryla has eaten {naughtyChild.Name}!");
-      naughtyList.Remove(naughtyChild); // Fjerner eventuellt barnet som blir spist.
-      break;
-    }
-  }
-}
-}
+        foreach (var person in people)
+        {
+            int score = 0;
 
+            if (person.DonatesToCharity) score++;
+            if (person.WashedHands) score++;
+            if (person.ToiletPaperOutward) score++;
+            if (!string.IsNullOrEmpty(person.HomeAdress)) score++;
+
+            if (score > 2)
+            {
+                niceList.Add(person);
+                Console.WriteLine($"{person.Name} added to the Nice List.");
+            }
+            else
+            {
+                naughtyList.Add(person);
+                Console.WriteLine($"{person.Name} added to the Naughty List.");
+            }
+        }
+    }
+
+    // Lage alver
+    static List<Elf> InitializeElves()
+    {
+        return new List<Elf>
+        {
+            new Elf { Name = "Alvhild", Craft = "Ceramic", Item = "Ashtray" },
+            new Elf { Name = "Leahlv", Craft = "Glassblowing", Item = "Glassball" },
+            new Elf { Name = "Kai-Alv", Craft = "Woodwork", Item = "Mini-sled" },
+            new Elf { Name = "Alvbjørn", Craft = "Artist", Item = "Portrait" },
+            new Elf { Name = "Alv-Prøysen", Craft = "Musician", Item = "Banjo" }
+        };
+    }
+
+    // Tildele alver
+    static void AssignElves(List<Person> niceList, List<Elf> elves)
+    {
+        int elfIndex = 0;
+        foreach (var person in niceList)
+        {
+            var elf = elves[elfIndex];
+            Console.WriteLine($"{elf.Name} is assigned to {person.Name} and gifts a {elf.Item}.");
+            elfIndex = (elfIndex + 1) % elves.Count;
+        }
+    }
+
+    // Gryla 
+    static void HandleGryla(List<Person> naughtyList)
+    {
+        var random = new Random();
+        foreach (var person in naughtyList)
+        {
+            if (random.Next(1, 101) <= 10) 
+            {
+                Console.WriteLine($"Gryla has eaten {person.Name}!");
+            }
+            else
+            {
+                Console.WriteLine($"{person.Name} gets coal.");
+            }
+        }
+    }
+}

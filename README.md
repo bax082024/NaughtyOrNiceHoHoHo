@@ -12,7 +12,7 @@
 ### How to use
 
 - Clone the repository : **https://github.com/bax082024/NaughtyOrNiceHoHoHo.git**
-- cd NaughtyOrNiceHoHoHo.
+- cd NaughtyOrNiceHoHoHo
 - dotnet run
 
 
@@ -23,6 +23,10 @@
 [Masterplan](/Masterplan/Prosjektuke-skisse.PNG)
 
 ---
+
+### About us : 
+- **Fadi, Mariann and Bax** Are backend programming students.
+We made this as a school assignment, to practice working together as a team.
 ### Contact :
 
 ### Discord ID

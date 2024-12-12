@@ -5,13 +5,16 @@
 
 - :innocent:  Are you naughty or nice  :smiling_imp:
 - Lets check santas list to see who is naughty or nice! 
-- If your on the naughty list, here is a change Gryla comes and eats you  :skull:
+- If your on the naughty list, there is a chance Gryla comes and eats you  :skull:
 
 ---
 
 ### How to use
 
 - Clone the repository : **https://github.com/bax082024/NaughtyOrNiceHoHoHo.git**
+- cd NaughtyOrNiceHoHoHo.
+- dotnet run
+
 
 ---
 

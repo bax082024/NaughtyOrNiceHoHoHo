@@ -32,6 +32,8 @@ We made this as a school assignment, to practice working together as a team.
 - **Fadi** - Groupleader, 
 - **Mariann** - HR department, Design 
 - **Bax** - Github, notary, deadlines
+- Everyone contributed with their own part of the code to make a complete program.
+
 
 ---
 

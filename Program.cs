@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
+using Microsoft.VisualBasic;
 using Models;
 
 class Program
@@ -18,8 +19,11 @@ class Program
         var niceList = new List<Person>();
         var naughtyList = new List<Person>();
 
+        //lager en instans av klassen med nissens godkjente lister
+        var SantaApproved = new SantasApprovedLists();
+
         // Sortere folk
-        SortPeople(people, niceList, naughtyList);
+        SortPeople(people, niceList, naughtyList, SantaApproved);
 
         // tildele alver til nice list
         var elves = InitializeElves();
@@ -27,6 +31,8 @@ class Program
 
         // gryla funskjon naughtylist
         HandleGryla(naughtyList);
+
+    
     }
 
 
@@ -51,7 +57,7 @@ class Program
     }
 
     // Sortere Folk
-    static void SortPeople(List<Person> people, List<Person> niceList, List<Person> naughtyList)
+    static void SortPeople(List<Person> people, List<Person> niceList, List<Person> naughtyList, SantasApprovedLists SantaApproved)
     {
         foreach (var person in people)
         {
@@ -61,16 +67,22 @@ class Program
             if (person.WashedHands) score++;
             if (person.ToiletPaperOutward) score++;
             if (!string.IsNullOrEmpty(person.HomeAdress)) score++;
+            if (SantaApproved.NiceCarModel.Contains(person.CarModel)) score++;
+
+            foreach (var genre in person.MusicGenres)
+            {
+                if (SantaApproved.NiceMusicGenre.Contains(genre)) score++;
+            }
 
             if (score > 2)
             {
                 niceList.Add(person);
-                Console.WriteLine($"{person.Name} added to the Nice List.");
+                Console.WriteLine($"Sweet! {person.Name} is added to the Nice List.");
             }
             else
             {
                 naughtyList.Add(person);
-                Console.WriteLine($"{person.Name} added to the Naughty List.");
+                Console.WriteLine($"Ooh, looks like {person.Name} is added to the Naughty List.");
             }
         }
     }
@@ -95,7 +107,8 @@ class Program
         foreach (var person in niceList)
         {
             var elf = elves[elfIndex];
-            Console.WriteLine($"{elf.Name} is assigned to {person.Name} and gifts a {elf.Item}.");
+            Console.WriteLine
+            ($"{elf.Name} is assigned to {person.Name}! {elf.Name}'s speciality is {elf.Craft} and gifts you a {elf.Item}.");
             elfIndex = (elfIndex + 1) % elves.Count;
         }
     }
@@ -108,11 +121,13 @@ class Program
         {
             if (random.Next(1, 101) <= 10) 
             {
-                Console.WriteLine($"Gryla has eaten {person.Name}!");
+                Console.WriteLine
+                ($"Oh no, this is unfortunate. Looks like {person.Name} will be eaten by Gryla\n");
             }
             else
             {
-                Console.WriteLine($"{person.Name} gets coal.");
+                Console.WriteLine
+                ($"Someones not been a very good person this year. {person.Name} gets a coal.\n");
             }
         }
     }

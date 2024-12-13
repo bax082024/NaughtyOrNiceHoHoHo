@@ -5,6 +5,7 @@
 
 - :innocent:  Are you naughty or nice  :smiling_imp:
 - Lets check santas list to see who is naughty or nice! 
+- If your on the nice list, you will be assigned your own special elf that gives you a special gift made with the magic of christmas!  :elf:
 - If your on the naughty list, there is a chance Gryla comes and eats you  :skull:
 
 ---

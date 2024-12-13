@@ -29,8 +29,8 @@
 - **Fadi, Mariann and Bax** Are backend programming students.
 We made this as a school assignment, to practice working together as a team.
 - We all had our assigned roles during the project :
-- **Fadi** - Groupleader, Design 
-- **Mariann** - HR department
+- **Fadi** - Groupleader, 
+- **Mariann** - HR department, Design 
 - **Bax** - Github, notary, deadlines
 
 ---

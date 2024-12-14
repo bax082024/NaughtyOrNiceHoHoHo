@@ -5,6 +5,7 @@
 
 - :innocent:  Are you naughty or nice  :smiling_imp:
 - Lets check santas list to see who is naughty or nice! 
+- If your on the nice list, you will be assigned your own special elf that gives you a special gift made with the magic of christmas!  :gift:
 - If your on the naughty list, there is a chance Gryla comes and eats you  :skull:
 
 ---
@@ -18,9 +19,10 @@
 
 ---
 
-### :gift:  Masterplan:  :gift:
+### :bulb:  Masterplan:  :bulb:
 
 [Masterplan](/Masterplan/Prosjektuke-skisse.PNG)  
+[Kontrakt](/Masterplan/ProsjektsKontrakt.txt)
 
 ---
 
@@ -28,9 +30,11 @@
 - **Fadi, Mariann and Bax** Are backend programming students.
 We made this as a school assignment, to practice working together as a team.
 - We all had our assigned roles during the project :
-- **Fadi** - Groupleader, Design 
-- **Mariann** - HR department
+- **Fadi** - Groupleader, 
+- **Mariann** - HR department, Design 
 - **Bax** - Github, notary, deadlines
+- Everyone contributed with their own part of the code to make a complete program.
+
 
 ---
 

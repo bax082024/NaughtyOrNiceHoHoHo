@@ -8,7 +8,7 @@ namespace Models
    public string? Name { get; set; } = string.Empty;
    public string? Craft { get; set; } = string.Empty;
    public string? Item { get; set; } = string.Empty;
-
+   public List<Person> AssignedPersons { get; set; } = new List<Person>();
   }
 }
 

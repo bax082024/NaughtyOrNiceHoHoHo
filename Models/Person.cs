@@ -9,6 +9,7 @@ namespace Models
         public List<string> MusicGenres { get; set; } = new List<string>();
         public string HomeAdress { get; set; } = string.Empty;
         public string CarModel { get; set; } = string.Empty;
+        public Elf? AssignedElf { get; set; } 
 
     }
 

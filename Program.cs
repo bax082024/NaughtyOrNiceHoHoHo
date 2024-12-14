@@ -27,12 +27,7 @@ class Program
 
         // tildele alver til nice list
         var elves = InitializeElves();
-        AssignElves(niceList, elves);
-
-        // gryla funskjon naughtylist
-        HandleGryla(naughtyList);
-
-    
+        
     }
 
 
@@ -56,9 +51,58 @@ class Program
         }
     }
 
+    // Lage alver
+    static List<Elf> InitializeElves()
+    {
+        return new List<Elf>
+        {
+            new Elf { Name = "Alvhild", Craft = "Ceramic", Item = "Ashtray" },
+            new Elf { Name = "Leahlv", Craft = "Glassblowing", Item = "Glassball" },
+            new Elf { Name = "Kai-Alv", Craft = "Woodwork", Item = "Mini-sled" },
+            new Elf { Name = "Alvbjørn", Craft = "Artist", Item = "Portrait" },
+            new Elf { Name = "Alv-Prøysen", Craft = "Musician", Item = "Banjo" }
+        };
+    }
+
+    static void AssignElf(Person creature, List<Elf> elves)
+    {
+        var random = new Random();
+
+        //velger en random alv til personen
+        int randomIndex = random.Next(elves.Count);
+        var chosenElf = elves[randomIndex];
+        creature.AssignedElf = chosenElf;
+
+        //plasserer personen i random alv sin liste
+        chosenElf.AssignedPersons.Add(creature);
+
+        Console.WriteLine
+            ($"{creature.Name}'s designated elf is: {chosenElf.Name} and their speciality is {chosenElf.Craft}. Your gift will be a {chosenElf.Item}! Happy christmas!\n");
+    } 
+    
+    // Gryla 
+    static void AssignGryla(Person creature)
+    {
+        var random = new Random();
+
+        //Lager en 10% sjangse vha random
+        if (random.Next(1, 11) == 3) 
+            {
+                Console.WriteLine
+                ($"Oh no, this is unfortunate. Looks like {creature.Name} will be eaten by Gryla\n");
+            }
+            else
+            {
+                Console.WriteLine
+                ($"Someones not been a very good person this year. {creature.Name} gets a coal.\n");
+            }
+    }
+
     // Sortere Folk
     static void SortPeople(List<Person> people, List<Person> niceList, List<Person> naughtyList, SantasApprovedLists SantaApproved)
     {
+        var elves = InitializeElves();
+
         foreach (var person in people)
         {
             int score = 0;
@@ -78,57 +122,18 @@ class Program
             {
                 niceList.Add(person);
                 Console.WriteLine($"Sweet! {person.Name} is added to the Nice List.");
+                AssignElf(person, elves);
             }
             else
             {
                 naughtyList.Add(person);
                 Console.WriteLine($"Ooh, looks like {person.Name} is added to the Naughty List.");
+                AssignGryla(person);
             }
         }
+
+
     }
 
-    // Lage alver
-    static List<Elf> InitializeElves()
-    {
-        return new List<Elf>
-        {
-            new Elf { Name = "Alvhild", Craft = "Ceramic", Item = "Ashtray" },
-            new Elf { Name = "Leahlv", Craft = "Glassblowing", Item = "Glassball" },
-            new Elf { Name = "Kai-Alv", Craft = "Woodwork", Item = "Mini-sled" },
-            new Elf { Name = "Alvbjørn", Craft = "Artist", Item = "Portrait" },
-            new Elf { Name = "Alv-Prøysen", Craft = "Musician", Item = "Banjo" }
-        };
-    }
-
-    // Tildele alver
-    static void AssignElves(List<Person> niceList, List<Elf> elves)
-    {
-        int elfIndex = 0;
-        foreach (var person in niceList)
-        {
-            var elf = elves[elfIndex];
-            Console.WriteLine
-            ($"{elf.Name} is assigned to {person.Name}! {elf.Name}'s speciality is {elf.Craft} and gifts you a {elf.Item}.");
-            elfIndex = (elfIndex + 1) % elves.Count;
-        }
-    }
-
-    // Gryla 
-    static void HandleGryla(List<Person> naughtyList)
-    {
-        var random = new Random();
-        foreach (var person in naughtyList)
-        {
-            if (random.Next(1, 101) <= 10) 
-            {
-                Console.WriteLine
-                ($"Oh no, this is unfortunate. Looks like {person.Name} will be eaten by Gryla\n");
-            }
-            else
-            {
-                Console.WriteLine
-                ($"Someones not been a very good person this year. {person.Name} gets a coal.\n");
-            }
-        }
-    }
+    
 }

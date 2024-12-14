@@ -18,3 +18,14 @@ Hjemmekontor og fikk ikke gjort så mye med prosjektet.
 
 13.12.2024
 
+Hatt hjemmekontor i dag, men føler at det har gått fint. God kommunikasjon med gruppen over
+discord. Gjorde ferdig funksjonene i SortPeople i prgrm for at listen skulle sortere alle atributtene. 
+Måtte gjøre noen endringer i Person.cs for å få ApprovedLists.cs til å funkere som tiltenkt. 
+Prosjektet er i utgangspunktet ferdig nå, mne jeg ønsker å gjøre noen endringer for at det skal
+bli lettere å lese det som bli skrevet ut i konsollen. Det jobber jeg videre på i morgen.
+
+
+14.12.2024
+
+Gjort litt endinger i program for å gjøre det lettere å lese det som kommer ut i konsollen. 
+

@@ -22,6 +22,7 @@
 ### :bulb:  Masterplan:  :bulb:
 
 [Masterplan](/Masterplan/Prosjektuke-skisse.PNG)  
+[Kontrakt](/Masterplan/ProsjektsKontrakt.txt)
 
 ---
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
+using Microsoft.VisualBasic;
 using Models;
 
 class Program
@@ -18,15 +19,15 @@ class Program
         var niceList = new List<Person>();
         var naughtyList = new List<Person>();
 
+        //lager en instans av klassen med nissens godkjente lister
+        var SantaApproved = new SantasApprovedLists();
+
         // Sortere folk
-        SortPeople(people, niceList, naughtyList);
+        SortPeople(people, niceList, naughtyList, SantaApproved);
 
         // tildele alver til nice list
         var elves = InitializeElves();
-        AssignElves(niceList, elves);
-
-        // gryla funskjon naughtylist
-        HandleGryla(naughtyList);
+        
     }
 
 
@@ -50,31 +51,6 @@ class Program
         }
     }
 
-    // Sortere Folk
-    static void SortPeople(List<Person> people, List<Person> niceList, List<Person> naughtyList)
-    {
-        foreach (var person in people)
-        {
-            int score = 0;
-
-            if (person.DonatesToCharity) score++;
-            if (person.WashedHands) score++;
-            if (person.ToiletPaperOutward) score++;
-            if (!string.IsNullOrEmpty(person.HomeAdress)) score++;
-
-            if (score > 2)
-            {
-                niceList.Add(person);
-                Console.WriteLine($"{person.Name} added to the Nice List.");
-            }
-            else
-            {
-                naughtyList.Add(person);
-                Console.WriteLine($"{person.Name} added to the Naughty List.");
-            }
-        }
-    }
-
     // Lage alver
     static List<Elf> InitializeElves()
     {
@@ -88,32 +64,76 @@ class Program
         };
     }
 
-    // Tildele alver
-    static void AssignElves(List<Person> niceList, List<Elf> elves)
-    {
-        int elfIndex = 0;
-        foreach (var person in niceList)
-        {
-            var elf = elves[elfIndex];
-            Console.WriteLine($"{elf.Name} is assigned to {person.Name} and gifts a {elf.Item}.");
-            elfIndex = (elfIndex + 1) % elves.Count;
-        }
-    }
-
-    // Gryla 
-    static void HandleGryla(List<Person> naughtyList)
+    static void AssignElf(Person creature, List<Elf> elves)
     {
         var random = new Random();
-        foreach (var person in naughtyList)
-        {
-            if (random.Next(1, 101) <= 10) 
+
+        //velger en random alv til personen
+        int randomIndex = random.Next(elves.Count);
+        var chosenElf = elves[randomIndex];
+        creature.AssignedElf = chosenElf;
+
+        //plasserer personen i random alv sin liste
+        chosenElf.AssignedPersons.Add(creature);
+
+        Console.WriteLine
+            ($"{creature.Name}'s designated elf is: {chosenElf.Name} and their speciality is {chosenElf.Craft}. Your gift will be a {chosenElf.Item}! Happy christmas!\n");
+    } 
+    
+    // Gryla 
+    static void AssignGryla(Person creature)
+    {
+        var random = new Random();
+
+        //Lager en 10% sjangse vha random
+        if (random.Next(1, 11) == 3) 
             {
-                Console.WriteLine($"Gryla has eaten {person.Name}!");
+                Console.WriteLine
+                ($"Oh no, this is unfortunate. Looks like {creature.Name} will be eaten by Gryla\n");
             }
             else
             {
-                Console.WriteLine($"{person.Name} gets coal.");
+                Console.WriteLine
+                ($"Someones not been a very good person this year. {creature.Name} gets a coal.\n");
+            }
+    }
+
+    // Sortere Folk
+    static void SortPeople(List<Person> people, List<Person> niceList, List<Person> naughtyList, SantasApprovedLists SantaApproved)
+    {
+        var elves = InitializeElves();
+
+        foreach (var person in people)
+        {
+            int score = 0;
+
+            if (person.DonatesToCharity) score++;
+            if (person.WashedHands) score++;
+            if (person.ToiletPaperOutward) score++;
+            if (!string.IsNullOrEmpty(person.HomeAdress)) score++;
+            if (SantaApproved.NiceCarModel.Contains(person.CarModel)) score++;
+
+            foreach (var genre in person.MusicGenres)
+            {
+                if (SantaApproved.NiceMusicGenre.Contains(genre)) score++;
+            }
+
+            if (score > 2)
+            {
+                niceList.Add(person);
+                Console.WriteLine($"Sweet! {person.Name} is added to the Nice List.");
+                AssignElf(person, elves);
+            }
+            else
+            {
+                naughtyList.Add(person);
+                Console.WriteLine($"Ooh, looks like {person.Name} is added to the Naughty List.");
+                AssignGryla(person);
             }
         }
+
+
     }
+
+    
 }

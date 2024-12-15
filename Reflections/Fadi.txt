@@ -15,3 +15,14 @@ Jeg har først og fremst:
 3. Tildelt alver til personer, hvor hver alv deler ut 1 gave til en hver person med hjelp av metoden AssignElves.
 4. Behandlet Gryla slik at det alltid er 10% sjanse for at hun spiser et barn.🎃
 
+🎃Torsdag 12 Desember: I dag var hovedfokuset mitt å sørge for at det ikke oppsto problem-meldinger fra koden min, noe jeg til en viss grad klarte på min vsc, men ironisk nok 
+så holdt jeg på å slette prosjektet fra Github grunnet min manglende erfaring, men takket være gruppens gode kommunikasjon via discord " De andre hadde HK" så reddet
+Alex prosjektet. 🎃
+
+🎃Fredag 13 Desember: I dag, ettersom prosjektet var for det meste ferdig så holdt gruppen god kommunkasjon via discord, vi oppdaterte hverandre på hva vi ønsker å legge til
+"Mariann ønsket å optimalisere hvordan konsollen skriver ut koden", og Alex holdt dialog om hvordan hans ReadMe så ut. 🎃
+
+🎃Lørdag 14 Desember: I dag så har Mariann gjort seg ferdig med sin optimalisering av koden, og Alex foreslo å levere inn prosjektet, noe vi ga tommel opp for!🎃
+
+🎃Søndag 15 Desember: Jeg glemte selfølgelig å oppdatere refleksjonsnotatene mine for torsdag - lørdag, oops!🎃
+
